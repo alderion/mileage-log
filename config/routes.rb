@@ -1,6 +1,13 @@
 MileageLog::Application.routes.draw do
 
-  resources :vehicles
+
+  get "mileage/index"
+
+  resources :vehicles do
+    resources :fill_ups
+  end
+
+  root :to => 'mileage#index'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

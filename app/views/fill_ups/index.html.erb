@@ -1,0 +1,31 @@
+<h1>Listing fill_ups</h1>
+
+<table>
+  <tr>
+    <th>Fill date</th>
+    <th>Mileage</th>
+    <th>Total cost</th>
+    <th>Gallons</th>
+    <th>Cost per gallon</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @fill_ups.each do |fill_up| %>
+  <tr>
+    <td><%= fill_up.fill_date %></td>
+    <td><%= fill_up.odometer %></td>
+    <td><%= fill_up.total_cost %></td>
+    <td><%= fill_up.gallons %></td>
+    <td><%= fill_up.cost_per_gallon %></td>
+    <td><%= link_to 'Show', vehicle_fill_up_path(@vehicle, @fill_up) %></td>
+    <td><%= link_to 'Edit', edit_vehicle_fill_up_path(fill_up) %></td>
+    <td><%= link_to 'Destroy', fill_up, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Fill up', new_vehicle_fill_up_path %>

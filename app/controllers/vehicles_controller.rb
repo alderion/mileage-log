@@ -14,6 +14,7 @@ class VehiclesController < ApplicationController
   # GET /vehicles/1.json
   def show
     @vehicle = Vehicle.find(params[:id])
+    @fill_ups = @vehicle.last_fill_ups
 
     respond_to do |format|
       format.html # show.html.erb

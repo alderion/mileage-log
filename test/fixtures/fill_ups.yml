@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  fill_date: 2012-05-11
+  mileage: 1
+  total_cost: 9.99
+  gallons: 9.99
+  cost_per_gallon: 9.99
+
+two:
+  fill_date: 2012-05-11
+  mileage: 1
+  total_cost: 9.99
+  gallons: 9.99
+  cost_per_gallon: 9.99

@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Fill date:</b>
+  <%= @fill_up.fill_date %>
+</p>
+
+<p>
+  <b>Mileage:</b>
+  <%= @fill_up.mileage %>
+</p>
+
+<p>
+  <b>Total cost:</b>
+  <%= @fill_up.total_cost %>
+</p>
+
+<p>
+  <b>Gallons:</b>
+  <%= @fill_up.gallons %>
+</p>
+
+<p>
+  <b>Cost per gallon:</b>
+  <%= @fill_up.cost_per_gallon %>
+</p>
+
+
+<%= link_to 'Edit', edit_fill_up_path(@fill_up) %> |
+<%= link_to 'Back', fill_ups_path %>

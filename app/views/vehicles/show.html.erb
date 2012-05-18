@@ -4,27 +4,22 @@
   <b>Name:</b>
   <%= @vehicle.name %>
 </p>
-
 <p>
-  <b>Make:</b>
-  <%= @vehicle.make %>
+  <b>Ave mpg:</b>
+  <%= @vehicle.ave_mpg %>
 </p>
+<table border=1>
+  <tr>
+    <td>fill date</td>
+    <td>odometer</td>
+    <td>gallons</td>
+    <td>price per gallon</td>
+    <td>total</td>
+    <td>mpg</td>
+  </tr>
+  <%= render(:partial => "fill_ups/fill_up", :collection => @fill_ups) %>
+</table>
 
-<p>
-  <b>Model:</b>
-  <%= @vehicle.model %>
-</p>
+<p><%= link_to("Add FillUp", new_vehicle_fill_up_path(@vehicle))%></p>
 
-<p>
-  <b>Year:</b>
-  <%= @vehicle.year %>
-</p>
-
-<p>
-  <b>Vin:</b>
-  <%= @vehicle.vin %>
-</p>
-
-
-<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
-<%= link_to 'Back', vehicles_path %>
+<%= link_to('Edit Vehicle', edit_vehicle_path(@vehicle)) %>
