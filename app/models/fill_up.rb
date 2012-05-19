@@ -1,6 +1,6 @@
 class FillUp < ActiveRecord::Base
   belongs_to :vehicle
-  attr_accessible :cost_per_gallon, :fill_date, :gallons, :odometer
+  attr_accessible :cost_per_gallon, :fill_date, :gallons, :odometer, :note
 
   def mpg_str
     sprintf("%.2f", mpg)

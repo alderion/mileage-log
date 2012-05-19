@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120511161841) do
+ActiveRecord::Schema.define(:version => 20120519014457) do
 
   create_table "fill_ups", :force => true do |t|
     t.integer  "vehicle_id"
@@ -22,6 +22,7 @@ ActiveRecord::Schema.define(:version => 20120511161841) do
     t.decimal  "mpg",             :precision => 10, :scale => 2
     t.datetime "created_at",                                     :null => false
     t.datetime "updated_at",                                     :null => false
+    t.string   "note"
   end
 
   create_table "vehicles", :force => true do |t|
