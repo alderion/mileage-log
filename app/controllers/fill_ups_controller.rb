@@ -61,6 +61,7 @@ class FillUpsController < ApplicationController
 
     respond_to do |format|
       if @fill_up.save
+        @vehicle.trigger_service_items @fill_up.odometer
         #format.html { redirect_to vehicle_fill_up_path(@vehicle, @fill_up), notice: 'Fill up was successfully created.' }
         format.html { redirect_to vehicle_path(@vehicle), notice: 'Fill up was successfully created.' }
         format.json { render json: @fill_up, status: :created, location: @fill_up }

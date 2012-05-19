@@ -1,0 +1,25 @@
+<%= form_for([@vehicle,@service_item]) do |f| %>
+  <% if @service_item.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@service_item.errors.count, "error") %> prohibited this service_item from being saved:</h2>
+
+      <ul>
+      <% @service_item.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :odometer %><br />
+    <%= f.number_field :odometer %>
+  </div>
+  <div class="field">
+    <%= f.label :item_desc %><br />
+    <%= f.text_field :item_desc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

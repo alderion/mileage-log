@@ -15,6 +15,7 @@ class VehiclesController < ApplicationController
   def show
     @vehicle = Vehicle.find(params[:id])
     @fill_ups = @vehicle.last_fill_ups
+    @service_items = @vehicle.triggered_service_items
 
     respond_to do |format|
       format.html # show.html.erb

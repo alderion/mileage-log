@@ -1,0 +1,9 @@
+<h1>New Service Item</h1>
+
+<p>
+<%= @vehicle.name %> current odometer: <%= @vehicle.get_last_odometer %>
+</p>
+
+<%= render 'form' %>
+
+<%= link_to 'Back', :back %>

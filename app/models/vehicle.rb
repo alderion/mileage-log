@@ -1,6 +1,21 @@
 class Vehicle < ActiveRecord::Base
   has_many :fill_ups
+  has_many :service_items
   attr_accessible :make, :model, :name, :vin, :year
+
+  def triggered_service_items
+    service_items.where("triggered = ? and completed = ?", true, false)
+  end
+
+  def trigger_service_items new_odometer
+    items = service_items.find_all_by_triggered(false)
+    items.each { |item|
+      if item.odometer <= new_odometer
+        item.triggered = true
+        item.save
+      end
+    }
+  end
 
   def last_fill_ups
     fill_ups.last(10).reverse

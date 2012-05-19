@@ -1,0 +1,28 @@
+<h1>Service Items</h1>
+
+<p>
+  <%= link_to(@vehicle.name, vehicle_path(@vehicle))%>
+  current odometer: <%= @vehicle.get_last_odometer %>
+</p>
+
+<table border=1>
+  <tr>
+    <th>Odometer</th>
+    <th>Item desc</th>
+    <th>Completed</th>
+    <th>triggered</th>
+  </tr>
+
+<% @service_items.each do |service_item| %>
+  <tr>
+    <td><%= service_item.odometer %></td>
+    <td><%= service_item.item_desc %></td>
+    <td><%= service_item.completed %></td>
+    <td><%= service_item.triggered %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'Add Service item', new_vehicle_service_item_path(@vehicle) %>

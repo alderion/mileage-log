@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120519014457) do
+ActiveRecord::Schema.define(:version => 20120519181635) do
 
   create_table "fill_ups", :force => true do |t|
     t.integer  "vehicle_id"
@@ -24,6 +24,18 @@ ActiveRecord::Schema.define(:version => 20120519014457) do
     t.datetime "updated_at",                                     :null => false
     t.string   "note"
   end
+
+  create_table "service_items", :force => true do |t|
+    t.integer  "odometer"
+    t.string   "item_desc"
+    t.boolean  "completed"
+    t.boolean  "triggered"
+    t.integer  "vehicle_id"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
+
+  add_index "service_items", ["vehicle_id"], :name => "index_service_items_on_vehicle_id"
 
   create_table "vehicles", :force => true do |t|
     t.string   "name"

@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  odometer: 1
+  item_desc: MyString
+  completed: false
+  vehicle: 
+
+two:
+  odometer: 1
+  item_desc: MyString
+  completed: false
+  vehicle: 

@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Odometer:</b>
+  <%= @service_item.odometer %>
+</p>
+
+<p>
+  <b>Item desc:</b>
+  <%= @service_item.item_desc %>
+</p>
+
+<p>
+  <b>Completed:</b>
+  <%= @service_item.completed %>
+</p>
+
+<p>
+  <b>Vehicle:</b>
+  <%= @service_item.vehicle %>
+</p>
+
+
+<%= link_to 'Edit', edit_service_item_path(@service_item) %> |
+<%= link_to 'Back', service_items_path %>

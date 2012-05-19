@@ -1,10 +1,12 @@
 MileageLog::Application.routes.draw do
-
-
   get "mileage/index"
+  #match 'service_items/:id/complete' => 'service_item#complete', :as => :complete_service_item
 
   resources :vehicles do
     resources :fill_ups
+    resources :service_items do
+      get 'complete', :on => :member
+    end
   end
 
   root :to => 'mileage#index'

@@ -1,0 +1,6 @@
+<li>
+  <%= service_item.odometer %>,
+  <%= service_item.item_desc %> -
+  <%= link_to("Complete Service Item",
+              complete_vehicle_service_item_path(@vehicle,service_item.id)) %>
+</li>
