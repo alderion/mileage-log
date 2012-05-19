@@ -3,7 +3,7 @@ class Vehicle < ActiveRecord::Base
   attr_accessible :make, :model, :name, :vin, :year
 
   def last_fill_ups
-    fill_ups.last 5
+    fill_ups.last(10).reverse
   end
 
   def ave_mpg

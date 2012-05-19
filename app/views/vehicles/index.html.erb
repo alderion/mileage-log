@@ -1,19 +1,12 @@
-<h1>vehicles</h1>
 
-<table>
-  <tr>
-    <th>Name</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<%= link_to "home", root_path %>
 
+<h2>vehicles</h2>
+<ul>
 <% @vehicles.each do |vehicle| %>
-  <tr>
-    <td><%= link_to vehicle.name, vehicle %></td>
-  </tr>
+    <li><%= link_to vehicle.name, vehicle %></li>
 <% end %>
-</table>
+</ul>
 
 <br />
 
